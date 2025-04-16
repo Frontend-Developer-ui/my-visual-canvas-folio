@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,22 +7,22 @@
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
+    --background: 220 15% 10%; /* Granite black */
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 11%;
+    --card: 220 15% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 11%;
+    --popover: 220 15% 10%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 262 83% 58%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 217 32% 17%;
+    --secondary: 220 20% 15%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 32% 17%;
+    --muted: 220 20% 15%;
     --muted-foreground: 215 20% 65%;
 
     --accent: 262 83% 58%;
@@ -31,8 +31,8 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
+    --border: 220 20% 15%;
+    --input: 220 20% 15%;
     --ring: 262 83% 58%;
 
     --radius: 0.5rem;
@@ -52,4 +52,17 @@
   .gradient-text {
     @apply bg-gradient-to-r from-purple-400 to-indigo-600 bg-clip-text text-transparent;
   }
+}
+
+@keyframes carousel {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+.animate-carousel {
+  animation: carousel 20s linear infinite;
 }

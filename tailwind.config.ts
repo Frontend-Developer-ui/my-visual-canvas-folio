@@ -166,6 +166,14 @@ export default {
 						opacity: '1'
 					}
 				},
+				'carousel': {
+					'0%': {
+						transform: 'translateX(0)'
+					},
+					'100%': {
+						transform: 'translateX(calc(-100% / 2))'
+					}
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -176,6 +184,7 @@ export default {
 				'slide-in-left': 'slide-in-left 0.5s ease-out',
 				'slide-in-right': 'slide-in-right 0.5s ease-out',
 				'rotate-in': 'rotate-in 0.5s ease-out',
+				'carousel': 'carousel 30s linear infinite',
 			}
 		}
 	},

@@ -47,8 +47,13 @@ const Header: React.FC = () => {
       } ${isVisible ? 'animate-bounce-in' : 'opacity-0'}`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className={`transition-all duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          <Logo animated size="md" />
+        <div className="flex flex-col transition-all duration-500">
+          <div className={`transition-all duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+            <Logo animated size="md" />
+          </div>
+          <p className={`text-xs md:text-sm text-muted-foreground font-manrope ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '300ms' }}>
+            Your Partner in Visual Storytelling
+          </p>
         </div>
 
         {/* Desktop Menu */}
@@ -57,7 +62,7 @@ const Header: React.FC = () => {
             <a
               key={item.name}
               href={item.href}
-              className={`text-sm font-medium text-muted-foreground hover:text-primary transition-colors ${
+              className={`text-sm font-medium text-muted-foreground hover:text-primary transition-colors font-manrope ${
                 isVisible ? 'animate-slide-in-right' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 100 + 200}ms` }}
@@ -82,7 +87,7 @@ const Header: React.FC = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="fixed inset-0 bg-background pt-16 z-40 md:hidden animate-fade-in">
-            <nav className="flex flex-col items-center space-y-8 p-8">
+            <nav className="flex flex-col items-center space-y-8 p-8 font-manrope">
               {menuItems.map((item, index) => (
                 <a
                   key={item.name}

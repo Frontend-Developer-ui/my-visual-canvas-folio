@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import Logo from "./Logo";
+import SocialLinks from "./SocialLinks";
 
 const Footer: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,31 +39,14 @@ const Footer: React.FC = () => {
             }`}
           >
             <Logo size="lg" animated={isVisible} />
-            <p className="mt-2 text-sm text-muted-foreground max-w-md">
+            <p className="mt-2 text-sm text-muted-foreground max-w-md font-manrope">
               Creating engaging user interfaces and meaningful interactions that
               resonate with users.
             </p>
           </div>
 
-          <div className="flex space-x-6">
-            {[
-              { icon: <Github size={20} />, href: "#", label: "GitHub", delay: 100 },
-              { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn", delay: 200 },
-              { icon: <Twitter size={20} />, href: "#", label: "Twitter", delay: 300 },
-              { icon: <Mail size={20} />, href: "mailto:contact@mrityunjay.design", label: "Email", delay: 400 },
-            ].map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className={`text-muted-foreground hover:text-primary transition-colors ${
-                  isVisible ? 'animate-fade-in' : 'opacity-0'
-                }`}
-                aria-label={item.label}
-                style={{ animationDelay: `${item.delay}ms` }}
-              >
-                {item.icon}
-              </a>
-            ))}
+          <div>
+            <SocialLinks isVisible={isVisible} />
           </div>
         </div>
 
@@ -73,7 +56,7 @@ const Footer: React.FC = () => {
           }`}
           style={{ transitionDelay: '300ms' }}
         >
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground font-manrope">
             &copy; {currentYear} Mrityunjay Yadav. All rights reserved.
           </p>
         </div>

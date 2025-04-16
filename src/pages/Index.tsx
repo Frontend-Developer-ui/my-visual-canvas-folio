@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,6 +7,8 @@ import ProjectCard, { Project } from "@/components/ProjectCard";
 import SkillCard from "@/components/SkillCard";
 import ToolBadge from "@/components/ToolBadge";
 import ContactForm from "@/components/ContactForm";
+import CompanyCarousel from "@/components/CompanyCarousel";
+import SocialLinks from "@/components/SocialLinks";
 
 import {
   Figma,
@@ -31,6 +32,8 @@ const Index: React.FC = () => {
         "A complete overhaul of a financial application focusing on improved user experience and accessibility.",
       imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop",
       tags: ["UI/UX", "Figma", "Prototyping"],
+      link: "#",
+      caseStudyLink: "#",
     },
     {
       id: 2,
@@ -39,6 +42,8 @@ const Index: React.FC = () => {
         "Designed a modern e-commerce platform with focus on conversion optimization and user engagement.",
       imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1472&auto=format&fit=crop",
       tags: ["Responsive Design", "Wireframing", "User Research"],
+      link: "#",
+      caseStudyLink: "#",
     },
     {
       id: 3,
@@ -47,6 +52,8 @@ const Index: React.FC = () => {
         "A concept travel application designed to make planning trips easier and more enjoyable.",
       imageUrl: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1470&auto=format&fit=crop",
       tags: ["Mobile App", "UI Design", "Framer"],
+      link: "#",
+      caseStudyLink: "#",
     },
     {
       id: 4,
@@ -55,6 +62,8 @@ const Index: React.FC = () => {
         "A comprehensive health monitoring dashboard designed for ease of use and data visualization.",
       imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop",
       tags: ["Dashboard", "Data Visualization", "UX Research"],
+      link: "#",
+      caseStudyLink: "#",
     },
     {
       id: 5,
@@ -63,6 +72,8 @@ const Index: React.FC = () => {
         "Complete brand identity design including logo, color palette, typography, and guidelines.",
       imageUrl: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1528&auto=format&fit=crop",
       tags: ["Branding", "Logo Design", "Style Guide"],
+      link: "#",
+      caseStudyLink: "#",
     },
     {
       id: 6,
@@ -71,6 +82,8 @@ const Index: React.FC = () => {
         "A platform designed for content creators to showcase and monetize their work effectively.",
       imageUrl: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1470&auto=format&fit=crop",
       tags: ["Web Design", "User Testing", "Information Architecture"],
+      link: "#",
+      caseStudyLink: "#",
     },
   ];
 
@@ -137,11 +150,14 @@ const Index: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground font-manrope">
       <Header />
 
       <main>
         <HeroSection />
+
+        {/* Company Carousel */}
+        <CompanyCarousel />
 
         {/* Projects Section */}
         <section id="projects" className="py-24">
@@ -180,7 +196,7 @@ const Index: React.FC = () => {
             </div>
 
             <div className="mt-16">
-              <h3 className="text-xl font-semibold mb-6 text-center">Tools & Technologies</h3>
+              <h3 className="text-xl font-semibold mb-6 text-center font-manrope">Tools & Technologies</h3>
               <div className="flex flex-wrap justify-center gap-4">
                 {tools.map((tool, index) => (
                   <ToolBadge key={index} name={tool.name} icon={tool.icon} />
@@ -196,7 +212,7 @@ const Index: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <SectionHeading title="About Me" />
-                <div className="space-y-4 text-muted-foreground">
+                <div className="space-y-4 text-muted-foreground font-manrope">
                   <p>
                     As a Visual Designer with over 2 years of self-taught experience, I specialize in creating engaging user interfaces and conducting user research.
                   </p>
@@ -212,6 +228,9 @@ const Index: React.FC = () => {
                   <p>
                     I'm excited to connect with fellow professionals and contribute to innovative projects that push the boundaries of design.
                   </p>
+                </div>
+                <div className="mt-8">
+                  <SocialLinks />
                 </div>
               </div>
               <div className="relative">

@@ -1,7 +1,8 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink, FileText } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export interface Project {
   id: number;
@@ -10,6 +11,7 @@ export interface Project {
   imageUrl: string;
   tags: string[];
   link?: string;
+  caseStudyLink?: string;
 }
 
 interface ProjectCardProps {
@@ -38,14 +40,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         )}
       </div>
       <CardContent className="p-6">
-        <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-        <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-        <div className="flex flex-wrap gap-2">
+        <h3 className="text-lg font-semibold mb-2 font-manrope">{project.title}</h3>
+        <p className="text-muted-foreground text-sm mb-4 font-manrope">{project.description}</p>
+        <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag, index) => (
             <Badge key={index} variant="secondary" className="bg-primary/10 text-primary">
               {tag}
             </Badge>
           ))}
+        </div>
+        <div className="flex flex-col sm:flex-row gap-2 mt-4">
+          <Button variant="outline" size="sm" className="flex items-center gap-1">
+            <FileText size={14} />
+            <span>Case Study</span>
+          </Button>
+          <Button size="sm" className="flex items-center gap-1">
+            <ExternalLink size={14} />
+            <span>View Project</span>
+          </Button>
         </div>
       </CardContent>
     </Card>
