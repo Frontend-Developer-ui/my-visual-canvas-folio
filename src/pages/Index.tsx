@@ -217,7 +217,7 @@ const Index: React.FC = () => {
               <div className="relative">
                 <div className="aspect-square bg-secondary/50 rounded-lg overflow-hidden relative">
                   <img
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1528&auto=format&fit=crop"
+                    src="/lovable-uploads/87ab814e-1c33-4cf8-9bed-fff25337de39.png"
                     alt="Mrityunjay Yadav"
                     className="w-full h-full object-cover"
                   />
